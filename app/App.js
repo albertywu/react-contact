@@ -1,58 +1,37 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {render} from 'react-dom';
-import KanbanBoard from './KanbanBoard'
+import ContactSearch from './ContactSearch'
 
-let cardsList = [
-  {
-    id: 1,
-    title: 'My Awesome Book',
-    description: 'Something you should read now...',
-    status: 'todo',
-    tasks: []
-  },
-  {
-    id: 2,
-    title: '1892',
-    description: 'A long long time ago...',
-    status: 'todo',
-    tasks: []
-  },
-  {
-    id: 3,
-    title: 'My Awesome Book 2',
-    description: 'Something you are currently reading...',
-    status: 'in progress',
-    tasks: []
-  },
-  {
-    id: 4,
-    title: 'My Awesome Book',
-    description: 'Something you already read...',
-    status: 'done',
-    tasks: [
-      {
-        id: 1,
-        name: 'ex 1',
-        done: true
-      },
-      {
-        id: 2,
-        name: 'ex 2',
-        done: true
-      },
-      {
-        id: 3,
-        name: 'ex 3',
-        done: true
-      }
-    ]
-  }
+let contacts = [
+  { id: 1, name: 'Albert Wu', email: 'albertywu@gmail.com' },
+  { id: 2, name: 'Albert Foo', email: 'albertfoo@gmail.com' },
+  { id: 3, name: 'Albert Y Moo', email: 'albertymoo@gmail.com' },
+  { id: 4, name: 'Veronika Wu', email: 'veronikawu@gmail.com' },
+  { id: 5, name: 'Steven Wu', email: 'stevenywu@gmail.com' }
 ]
 
 class App extends Component {
+
+  constructor() {
+    super()
+    this.state = {
+      inputValue: ''
+    }
+  }
+
+  handleChange(value) {
+    this.setState({
+      inputValue: value
+    })
+  }
+
   render(){
     return (
-        <KanbanBoard cards={cardsList} />
+        <ContactSearch
+          inputValue={ this.state.inputValue }
+          onChange={ this.handleChange.bind(this) }
+          contacts={ contacts }
+        />
     );
   }
 }
