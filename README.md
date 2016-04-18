@@ -1,6 +1,6 @@
-React App Boilerplate
-=====================
+React Contact List
+==================
 
-Quickstart project template for learning React. Good for getting up and running in React quickly.
+Basic Contact List
 
-Inspired by the Pro-React book by Cassio de Sousa Antonio.
+Experimenting with one-way data flow in React with upward-bound events triggered by the top-level consumer
