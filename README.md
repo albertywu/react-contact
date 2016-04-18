@@ -10,4 +10,5 @@ To run:
 ```
 npm install
 npm start
+# go to live-server at http://localhost:8080
 ```
